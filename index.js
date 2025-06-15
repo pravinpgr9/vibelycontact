@@ -17,6 +17,8 @@ const postRoute = require('./routes/posts')
 const verifyRoute = require('./routes/emailverify')
 const linkedRoute = require('./routes/linkedpost')
 const contactusRoute = require('./routes/vibelycontactus');
+// Import routes
+const orderRoute = require('./routes/order');   // The new order route
 
 
 const tourism_enquiryRoute = require('./routes/tourism_enquiry')
@@ -54,6 +56,9 @@ app.use("/api/linkedin",linkedRoute)
 
 app.use("/api/tourismenquiry",tourism_enquiryRoute)
 app.use("/api/vibelycontactus", contactusRoute);
+
+// Use routes
+app.use('/api/orders', orderRoute);          // New path for video orders
 
 
 app.listen(8808, () => {
